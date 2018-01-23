@@ -24,6 +24,6 @@ exports.updateGroup = (req) => {
 };
 
 exports.removeGroup = (req) => {
-    const condition = req.params.id;
-    return Group.findOneAndRemove(condition);
+    const condition = {_id: req.params.id};
+    return Group.findByIdAndRemove(condition);
 };
